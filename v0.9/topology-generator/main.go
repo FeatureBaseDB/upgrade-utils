@@ -33,11 +33,11 @@ func main() {
 		usage()
 	}
 
-	clusterId := uuid.NewV4().String()
+	clusterId := uuid.Must(uuid.NewV4()).String()
 	nodeIds := make([]string, numNodes)
 
 	for i := 0; i < numNodes; i++ {
-		nodeIds[i] = uuid.NewV4().String()
+		nodeIds[i] = uuid.Must(uuid.NewV4()).String()
 	}
 	sort.Strings(nodeIds)
 
